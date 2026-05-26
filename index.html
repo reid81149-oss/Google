@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google - Custom Web Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="browser-container">
+        <!-- Header with Logo -->
+        <div class="header">
+            <div class="logo">
+                <span class="logo-text">G</span>
+                <span class="logo-text" style="color: #4285F4;">o</span>
+                <span class="logo-text" style="color: #EA4335;">o</span>
+                <span class="logo-text" style="color: #FBBC04;">g</span>
+                <span class="logo-text" style="color: #34A853;">l</span>
+                <span class="logo-text" style="color: #EA4335;">e</span>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <button id="backBtn" class="nav-button" title="Back">
+                <span class="icon">←</span>
+            </button>
+            <button id="forwardBtn" class="nav-button" title="Forward">
+                <span class="icon">→</span>
+            </button>
+            <button id="refreshBtn" class="nav-button" title="Refresh">
+                <span class="icon">⟳</span>
+            </button>
+            
+            <div class="address-bar-container">
+                <input 
+                    type="text" 
+                    id="addressBar" 
+                    class="address-bar" 
+                    placeholder="Enter a URL (e.g., https://example.com)"
+                >
+                <button id="bookmarkBtn" class="bookmark-button" title="Bookmark this page">
+                    <span class="icon">☆</span>
+                </button>
+            </div>
+
+            <button id="menuBtn" class="nav-button" title="Menu">
+                <span class="icon">☰</span>
+            </button>
+        </div>
+
+        <!-- Bookmarks Bar -->
+        <div class="bookmarks-bar">
+            <span class="bookmarks-label">Bookmarks:</span>
+            <div id="bookmarksList" class="bookmarks-container">
+                <!-- Bookmarks will be added here dynamically -->
+            </div>
+            <button id="clearBookmarksBtn" class="clear-btn" title="Clear all bookmarks">
+                <span class="icon">✕</span>
+            </button>
+        </div>
+
+        <!-- Browser Window -->
+        <div class="browser-window">
+            <iframe id="browserFrame" class="browser-frame"></iframe>
+            <div id="loadingScreen" class="loading-screen">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+            <div id="errorScreen" class="error-screen" style="display: none;">
+                <h2>Cannot Load Page</h2>
+                <p id="errorMessage"></p>
+                <button onclick="document.getElementById('addressBar').focus()">Try Again</button>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span id="currentUrl" class="status-text">Ready</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
